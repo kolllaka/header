@@ -1,0 +1,268 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+:root[data-theme='light'] {
+	--color-main: #5D2317;
+	--color-sub1: #AE5833;
+	--color-sub2:#F4C8A5;
+	--color-text1:#ECA962;
+	--color-text2:#F5EFDA;
+	--color-footer: black;
+	--theme-content-btn: '☀';
+}
+
+:root[data-theme='dark'] {
+	--color-main: #00010D;
+	--color-sub1: #010326;
+	--color-sub2:#2D0140;
+	--color-text1:#660273;
+	--color-text2:#A305A6;
+	--color-footer: black;
+	--theme-content-btn: '☽';
+}
+
+:root[data-theme='flower'] {
+	--color-main: #164147;
+	--color-sub1: #418393;
+	--color-sub2:#B1D9F2;
+	--color-text1:#DCDDCE;
+	--color-text2:#88B5A2;
+	--color-footer: black;
+	--theme-content-btn: '✿';
+}
+
+.wrapper {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	min-height: 100vh;
+}
+
+ul,li {
+	list-style: none;
+}
+
+span {
+	letter-spacing: 2px;
+	color: var(--color-text1);
+}
+
+a {
+	letter-spacing: 2px;
+	color: var(--color-text1);
+   text-decoration: none;
+	&:hover {
+      color: var(--color-sub2);
+   }
+}
+
+.container {
+	max-width: 1800px;
+	margin: 0 auto;
+	padding: 0 5px;
+
+	@media (max-width: 1600px) {
+		max-width: 1200px;
+	}
+}
+
+.header {
+	padding: 8px 0;
+	background-color: var(--color-main);
+	// .header__body
+	&__body {
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+		gap: 10%;
+	}
+
+	// .header__logo
+	&__logo {
+		.logo__title {
+			color: var(--color-main);
+			-webkit-text-stroke: .8px var(--color-text2);
+		}
+
+		.logo__img {
+			fill: var(--color-text2);
+		}
+	}
+
+	// .header__nav
+	&__nav {
+	}
+
+	// .header__auth
+	&__auth {
+		margin-left: auto;
+	}
+}
+.logo {
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	height: 50px;
+
+	// .logo__img
+	&__img {
+		cursor: pointer;
+		height: 100%;
+		fill: var(--color-footer);
+	}
+
+	// .logo__title
+	&__title {
+		white-space: nowrap;
+		letter-spacing: 0px;
+		font-size: 30px;
+		font-weight: 700;
+		-webkit-text-stroke: .8px var(--color-footer);
+	}
+
+}
+.nav {
+
+	// .nav__list
+	&__list {
+		display: flex;
+		align-items: center;
+		gap: 10px;
+	}
+
+	// .nav__item
+	&__item {
+	}
+}
+.auth {
+
+	// .auth__list
+	&__list {
+		display: inline-flex;
+		align-items: center;
+		gap: 10px;
+	}
+
+	// .auth__item
+	&__item {
+	}
+
+}
+
+
+.footer {
+	background-color: var(--color-sub2);
+	padding: 40px 0;
+	margin-top: auto;
+
+	&__body {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		// flex-direction: column;
+	}
+
+	// .footer__logo
+	&__logo {
+		.logo__title {
+			color: var(--color-sub2);
+		}
+	}
+
+	// .footer__info
+	&__info {
+	color: var(--color-footer);
+	}
+}
+
+.main {
+	// background: rgb(from var(--color-sub1) r g b);
+	background: url(../img/background.webp), var(--color-sub1);
+	background-repeat: repeat-y;
+	background-size: contain;
+
+	padding: 40px 0;
+	// .main__body
+	&__body {
+		padding: 40px 15px;
+		border-radius: 10px;
+		background: rgb(from var(--color-sub1) r g b / .9);
+		display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+
+		line-height: 1.1;
+
+		h1 {
+			margin-bottom: 20px;
+			color: var(--color-text2);
+			font-weight: 700;
+			font-size: 48px;
+		}
+
+		p {
+			color: var(--color-text1);
+         font-size: 24px;
+         text-align: justify;
+			margin-bottom: 15px;
+		}
+	}
+}
+
+@media (max-width: 900px) {
+	.header {
+		&__body {
+			justify-content: center;
+		}
+	
+		&__logo {
+			margin-right: 0;
+		}
+	}
+	.logo__title {
+		display: none;
+	}
+}
+
+.btn {
+	border-radius: 5px;
+	background-color: var(--color-sub1);
+   color: var(--color-text1);
+   padding: 10px 30px;
+   border: none;
+   cursor: pointer;
+	text-transform: uppercase;
+
+	&:hover {
+		color: var(--color-text2);
+      background-color: var(--color-sub2);
+		box-shadow: 2px 2px 4px black,
+			1px 1px 2px black;
+   }
+
+	&:active {
+		color: var(--color-text2);
+      background-color: var(--color-sub2);
+		box-shadow: 1px 1px 2px black;
+	}
+}
+
+.btn-theme {
+	cursor: pointer;
+   background-color: transparent;
+	&::after {
+		font-size: 1.5em;
+		content: var(--theme-content-btn);
+		color: var(--color-text1);
+	}
+
+   &:hover {
+		&::after {
+			color: var(--color-text2);
+		}
+   }
+}
