@@ -140,7 +140,8 @@ a:hover {
 .main {
   background: url(../img/background.webp), var(--color-sub1);
   background-repeat: repeat-y;
-  background-size: contain;
+  background-size: cover;
+  background-position: center;
   padding: 40px 0;
 }
 .main__body {
