@@ -201,6 +201,7 @@ a:hover {
 .btn-theme {
   cursor: pointer;
   background-color: transparent;
+  padding-bottom: 5px;
 }
 .btn-theme::after {
   font-size: 1.5em;

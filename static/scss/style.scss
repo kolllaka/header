@@ -254,6 +254,7 @@ a {
 .btn-theme {
 	cursor: pointer;
    background-color: transparent;
+	padding-bottom: 5px;
 	&::after {
 		font-size: 1.5em;
 		content: var(--theme-content-btn);
