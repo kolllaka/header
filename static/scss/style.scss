@@ -59,7 +59,7 @@ a {
 }
 
 .container {
-	max-width: 1800px;
+	max-width: 1200px;
 	margin: 0 auto;
 	padding: 0 5px;
 
@@ -181,8 +181,8 @@ a {
 	// background: rgb(from var(--color-sub1) r g b);
 	background: url(../img/background.webp), var(--color-sub1);
 	background-repeat: repeat-y;
-	background-size: cover;
-	background-position: center;
+	background-size: cover 100%;
+	background-position: center top;
 
 	padding: 40px 0;
 	// .main__body
